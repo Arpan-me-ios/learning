@@ -3,4 +3,5 @@
 Learning Python, AI, GitHub, and building projects.
 
 ## Projects
-- Motivation App (Basic API Knowledge)
+- Motivation (Basic API Tool)
+- Basic Dictionary
