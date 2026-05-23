@@ -1,0 +1,23 @@
+import requests
+city=input("Enter the name of the city: ")
+response=requests.get("https://wttr.in/{city}?format=j1".format(city=city))
+data=response.json()
+
+feels_like=data['current_condition'][0]["FeelsLikeC"]
+
+humidity=data['current_condition'][0]['humidity']
+print('The current humidity is :',humidity,"%")
+
+temp=data['current_condition'][0]['temp_C']
+
+condition=data['current_condition'][0]['weatherDesc'][0]['value']
+
+
+if temp>feels_like:
+    a="happily"
+elif temp<feels_like:
+    a="sadly"
+else:
+    a="neutrally"
+
+print("The Current Weather is", condition, "with a temperature of", temp, "°C but",a,"feels like", feels_like, "°C")
